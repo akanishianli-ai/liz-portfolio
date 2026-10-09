@@ -1,82 +1,591 @@
-LIZ HU / 胡安栗
-首页 关于我 精选作品 工作履历
-体验设计
-UI / UX / XR / 数字孪生
-10年卓越设计积淀
-资深交互设计 胡安栗
-深耕高端汽车XR沉浸式交互、AIGC数字孪生及多端产品体验设计。通过视觉与逻辑的纯粹结合，为一线品牌构建商业温度与体验灵魂。
-￼
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胡安栗 | Senior UI/XR Interaction Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f9f8f4; /* 经典日系和纸色 */
+            --text-main: #1a1a1a;
+            --text-sub: #666666;
+            --accent: #8c7e6d; /* 侘寂风大地色系 */
+            --accent-light: #f1efe9;
+        }
 
-核心优势 / ADVANTAGE
-01 跨维度的数字设计视野
-从移动端 App、Web 小程序到三维虚幻引擎(UE)界面适配，具备极强的从0到1产品视觉体系搭建与全局组件交互定义能力。
-02 奢牌服务基因与商业变现
-长期深度合作奔驰、迈巴赫、保时捷、安德玛等头部品牌，深谙奢华精致美学与尖端数字化体验的完美平衡。
-03 100% 敏捷响应交付
-10年职业生涯零延期纪录。具备杰出的跨团队协作及客户诉求拆解能力，将创意切实转化为商业增长。
-专业技能
-核心技术专业栈
-UI/UX设计 XR/VR界面交互 数字孪生 数据可视化 虚幻引擎界面适配 AIGC设计工具 设计系统规范 全局组件库
-10年
-资深行业设计经验
-精选案例 / SELECTED WORK
-￼
-2023 虎啸奖 · 智能交互金奖
-奔驰 G63 VR 新零售智能看车体验
-VR 空间交互 / 虚幻引擎
-￼
-2024 金梧奖 · 零售创新银奖
-安德玛中国全渠道数字消费新体验
-全渠道商业生态 / 设计系统搭建
-￼
-2023 DMA 移动应用银奖
-保时捷“开箱交付时刻”车主尊享生态
-高端用户体验 / 微信小程序定制生态
-￼
-2025 虎啸奖 · 年度最佳AIGC平台
-虚拟资产工坊 - 铸造全息数字孪生
-AIGC 视觉生成 / 3D 资产管理
-￼
-2023 虎啸奖 · 优秀智能交互奖
-迈巴赫 XR 艺境沙龙数字配置器
-XR 沉浸配置 / 中控双屏联动
-展开更多案例 ↓
-工作履历 / EXPERIENCE
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-动线网络设计咨询 (上海) 有限公司
-2022.02 - 至今
-UI设计师 (资深)
-主导奔驰、迈巴赫、保时捷等高端汽车及科技零售品牌全链路创新设计，专注于三维沉浸式 XR、数字孪生系统及 AIGC 产品工具建设。在多品牌线并行状态下完美保障 100% 成功交付。
+        /* 强制去除可能存在的任何斜体样式 */
+        em, i, cite, address, var {
+            font-style: normal !important;
+        }
 
-翎医信息科技 (上海) 有限公司
-2021.03 - 2021.12
-UI设计师
-全权主导医疗健康及孕育类多端产品 UX/UI 视觉重构。设计自研数字健康管理工具，获得辉瑞、喜宝等多家核心药企巨头的高度认可，直接推进多起百万商业合作变现。
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
 
-上海舟恩信息技术有限公司
-2019.07 - 2021.01
-UI设计师
-负责旭辉集团、平安医保科技等大型 B 端业务与金融大盘数据分析后台设计。对金融、地产数据实施轻量化、极简化可视化提炼，打通高度复杂的研发落地还原链路。
+        .parallax-bg {
+            position: absolute;
+            font-size: 15vw;
+            font-weight: 900;
+            color: rgba(0,0,0,0.02);
+            white-space: nowrap;
+            z-index: -1;
+            pointer-events: none;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
 
-天津海纳媒体大数据科技发展有限公司北京分公司
-2017.05 - 2018.11
-UI设计师
-全面负责“紫藤”、“评论督查”等多款数据产品的用户体验全流程设计，涵盖产品策划、原型绘制、交互设计至视觉落地。 建立并推行公司级UI设计规范，完成网站前端与后台系统的整体视觉风格把控，主导项目迭代升级，有效整合UI界面。
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+        }
 
-上海众焱网络科技有限公司
-2016.05 - 2017.03
-UI设计师
-独立完成公司网站及iOS移动端产品的UI视觉设计，并承担前期的交互原型设计工作，奠定产品用户体验基础。
-展开更多
-虎啸奖 TIGER ROAR AWARDS DMA 中国数字媒体大奖 金鼠标奖 GOLDEN MOUSE AWARDS 金梧奖 GOLDEN WUTONG AWARDS 虎啸奖 TIGER ROAR AWARDS
-把模糊的问题， 设计成清晰的体验。
-如果你正在做一件复杂但值得的事，我们可以聊聊。
-联系方式
-邮箱
-微信
-￼ 扫一扫添加微信
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background: var(--text-main);
+        }
 
-工作地点
-中国，上海
-© 2026 Liz Hu
-返回顶部 ↑
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+        }
+
+        .award-tag {
+            font-size: 10px;
+            padding: 2px 8px;
+            border: 0.5px solid var(--accent);
+            color: var(--accent);
+            border-radius: 99px;
+            margin-right: 4px;
+            display: inline-block;
+            font-weight: 400;
+        }
+
+        .page-transition {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="fixed top-0 left-0 w-full px-6 py-4 md:px-12 md:py-6 z-50 flex justify-between items-center bg-[#f9f8f4]/90 backdrop-blur-md border-b border-stone-200/60 text-stone-800">
+        <a href="#home" class="text-lg md:text-xl font-bold tracking-widest hover:opacity-70 transition-opacity">LIZ HU / 胡安栗</a>
+        <div class="space-x-4 md:space-x-8 text-xs md:text-sm uppercase tracking-wider font-medium flex">
+            <a href="#home" class="nav-link hover:text-[#8c7e6d] transition-colors">首页</a>
+            <a href="#about" class="nav-link hover:text-[#8c7e6d] transition-colors">关于我</a>
+            <a href="#projects" class="nav-link hover:text-[#8c7e6d] transition-colors">精选作品</a>
+            <a href="#experience" class="nav-link hover:text-[#8c7e6d] transition-colors">工作履历</a>
+        </div>
+    </nav>
+
+    <div id="home-view" class="page-transition flex-1">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden px-6 pt-16">
+            <div class="parallax-bg" id="hero-bg-text">体验设计</div>
+            
+            <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center mt-12">
+                <div class="md:col-span-1 hidden md:block">
+                    <div class="vertical-text text-xs tracking-[0.5em] text-stone-400 opacity-80 uppercase font-medium">
+                        UI / UX / XR / 数字孪生
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7">
+                    <h2 class="text-xs tracking-[0.3em] mb-4 text-stone-500 uppercase font-medium">10年卓越设计积淀</h2>
+                    <h1 class="text-5xl md:text-7xl font-light leading-tight mb-6">
+                        资深交互设计<br/>
+                        <span class="font-bold">胡安栗</span>
+                    </h1>
+                    <p class="max-w-md text-stone-600 leading-relaxed font-light text-sm">
+                        深耕高端汽车XR沉浸式交互、AIGC数字孪生及多端产品体验设计。通过视觉与逻辑的纯粹结合，为一线品牌构建商业温度与体验灵魂。
+                    </p>
+                </div>
+
+                <div class="md:col-span-4 relative">
+                    <div class="w-full aspect-[3/4] bg-stone-200 rounded-[16px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-sm border border-stone-200">
+                        <img src="assets/portrait.png" alt="Liz Hu Portrait" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 向下滚动微动效引导箭头 -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer animate-bounce opacity-60 hover:opacity-100 transition-opacity" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
+                <svg class="w-6 h-6 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-32 px-6 max-w-6xl mx-auto border-t border-stone-200">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                <div>
+                    <h3 class="section-title text-stone-800">核心优势 / ADVANTAGE</h3>
+                    <div class="space-y-8">
+                        <div class="group">
+                            <h4 class="text-xl font-medium mb-2 group-hover:text-[#8c7e6d] transition-colors">01 跨维度的数字设计视野</h4>
+                            <p class="text-stone-500 text-sm leading-relaxed">从移动端 App、Web 小程序到三维虚幻引擎(UE)界面适配，具备极强的从0到1产品视觉体系搭建与全局组件交互定义能力。</p>
+                        </div>
+                        <div class="group">
+                            <h4 class="text-xl font-medium mb-2 group-hover:text-[#8c7e6d] transition-colors">02 奢牌服务基因与商业变现</h4>
+                            <p class="text-stone-500 text-sm leading-relaxed">长期深度合作奔驰、迈巴赫、保时捷、安德玛等头部品牌，深谙奢华精致美学与尖端数字化体验的完美平衡。</p>
+                        </div>
+                        <div class="group">
+                            <h4 class="text-xl font-medium mb-2 group-hover:text-[#8c7e6d] transition-colors">03 100% 敏捷响应交付</h4>
+                            <p class="text-stone-500 text-sm leading-relaxed">10年职业生涯零延期纪录。具备杰出的跨团队协作及客户诉求拆解能力，将创意切实转化为商业增长。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-stone-100/70 p-10 rounded-[16px] relative overflow-hidden border border-stone-200">
+                    <div class="parallax-bg text-4xl opacity-[0.01]" style="top:20%; left:10%;">专业技能</div>
+                    <h3 class="text-xs tracking-widest text-stone-400 mb-8 uppercase font-medium">核心技术专业栈</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">UI/UX设计</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">XR/VR界面交互</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">数字孪生</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">数据可视化</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">虚幻引擎界面适配</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">AIGC设计工具</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">设计系统规范</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">全局组件库</span>
+                    </div>
+                    <div class="mt-12">
+                        <div class="text-5xl font-bold text-stone-800 opacity-20">10年</div>
+                        <div class="text-xs text-stone-500 mt-2 tracking-widest uppercase">资深行业设计经验</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Projects (Featured) -->
+        <section id="projects" class="py-20 bg-stone-900 text-white overflow-hidden">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <h3 class="section-title text-white mb-2">精选案例 / SELECTED WORK</h3>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-10 items-start">
+                    <div class="flex flex-col gap-y-12">
+                        <!-- Project 1 -->
+                    <div class="project-card group">
+                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
+                            <img src="assets/case-benz.png" alt="Benz G63 VR" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
+                                <div class="flex space-x-2 mb-3">
+                                    <span class="award-tag border-white text-white">2023 虎啸奖 · 智能交互金奖</span>
+                                </div>
+                                <h4 class="text-xl md:text-2xl font-medium">奔驰 G63 VR 新零售智能看车体验</h4>
+                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">VR 空间交互 / 虚幻引擎</p>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- Project 3 -->
+                    <div class="project-card group">
+                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
+                            <img src="assets/case-under-armour.png" alt="Under Armour Retail" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
+                                <div class="flex space-x-2 mb-3">
+                                    <span class="award-tag border-white text-white">2024 金梧奖 · 零售创新银奖</span>
+                                </div>
+                                <h4 class="text-xl md:text-2xl font-medium">安德玛中国全渠道数字消费新体验</h4>
+                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">全渠道商业生态 / 设计系统搭建</p>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- Expanded project -->
+                    <div id="more-project-5" class="project-card group hidden">
+                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
+                            <img src="assets/case-porsche.png" alt="保时捷交付小程序" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
+                                <div class="flex space-x-2 mb-3">
+                                    <span class="award-tag border-white text-white">2023 DMA 移动应用银奖</span>
+                                </div>
+                                <h4 class="text-xl md:text-2xl font-medium">保时捷“开箱交付时刻”车主尊享生态</h4>
+                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">高端用户体验 / 微信小程序定制生态</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flex flex-col gap-y-12 md:pt-8">
+                        <!-- Project 2 -->
+                    <div class="project-card group">
+                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
+                            <img src="assets/case-digital-twin.png" alt="Digital Twin" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
+                                <div class="flex space-x-2 mb-3">
+                                    <span class="award-tag border-white text-white">2025 虎啸奖 · 年度最佳AIGC平台</span>
+                                </div>
+                                <h4 class="text-xl md:text-2xl font-medium">虚拟资产工坊 - 铸造全息数字孪生</h4>
+                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">AIGC 视觉生成 / 3D 资产管理</p>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- Project 4 -->
+                    <div class="project-card group">
+                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
+                            <img src="assets/case-maybach.png" alt="Maybach XR" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
+                                <div class="flex space-x-2 mb-3">
+                                    <span class="award-tag border-white text-white">2023 虎啸奖 · 优秀智能交互奖</span>
+                                </div>
+                                <h4 class="text-xl md:text-2xl font-medium">迈巴赫 XR 艺境沙龙数字配置器</h4>
+                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">XR 沉浸配置 / 中控双屏联动</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <button id="toggle-projects-btn" type="button" aria-expanded="false" aria-controls="more-project-5" onclick="toggleMoreProjects()" class="inline-flex items-center gap-2 text-xs tracking-widest text-stone-400 border-b border-stone-600 pb-1 hover:text-white transition-colors uppercase font-medium">
+                        <span>展开更多案例</span>
+                        <span aria-hidden="true" class="transition-transform">↓</span>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Work Experience Timeline -->
+        <section id="experience" class="py-32 px-6 max-w-4xl mx-auto">
+            <h3 class="section-title text-stone-800">工作履历 / EXPERIENCE</h3>
+            <div class="space-y-16 mt-16">
+                
+                <div class="relative pl-8 border-l border-stone-200">
+                    <div class="absolute -left-[5px] top-1 w-[9px] h-[9px] bg-stone-800 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h4 class="font-bold text-lg">动线网络设计咨询 (上海) 有限公司</h4>
+                        <span class="text-xs tracking-widest text-[#8c7e6d] font-medium">2022.02 - 至今</span>
+                    </div>
+                    <p class="text-xs text-stone-400 uppercase tracking-widest mb-3">UI设计师 (资深)</p>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">主导奔驰、迈巴赫、保时捷等高端汽车及科技零售品牌全链路创新设计，专注于三维沉浸式 XR、数字孪生系统及 AIGC 产品工具建设。在多品牌线并行状态下完美保障 100% 成功交付。</p>
+                </div>
+
+                <div class="relative pl-8 border-l border-stone-200">
+                    <div class="absolute -left-[5px] top-1 w-[9px] h-[9px] bg-stone-300 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h4 class="font-bold text-lg">翎医信息科技 (上海) 有限公司</h4>
+                        <span class="text-xs tracking-widest text-stone-400 font-medium">2021.03 - 2021.12</span>
+                    </div>
+                    <p class="text-xs text-stone-400 uppercase tracking-widest mb-3">UI设计师</p>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">全权主导医疗健康及孕育类多端产品 UX/UI 视觉重构。设计自研数字健康管理工具，获得辉瑞、喜宝等多家核心药企巨头的高度认可，直接推进多起百万商业合作变现。</p>
+                </div>
+
+                <div class="relative pl-8 border-l border-stone-200">
+                    <div class="absolute -left-[5px] top-1 w-[9px] h-[9px] bg-stone-300 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h4 class="font-bold text-lg">上海舟恩信息技术有限公司</h4>
+                        <span class="text-xs tracking-widest text-stone-400 font-medium">2019.07 - 2021.01</span>
+                    </div>
+                    <p class="text-xs text-stone-400 uppercase tracking-widest mb-3">UI设计师</p>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">负责旭辉集团、平安医保科技等大型 B 端业务与金融大盘数据分析后台设计。对金融、地产数据实施轻量化、极简化可视化提炼，打通高度复杂的研发落地还原链路。</p>
+                </div>
+
+                <!-- 展开的更多履历模块 -->
+                <div id="more-experience" class="hidden space-y-16">
+                    <div class="relative pl-8 border-l border-stone-200">
+                        <div class="absolute -left-[5px] top-1 w-[9px] h-[9px] bg-stone-300 rounded-full"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                            <h4 class="font-bold text-lg">天津海纳媒体大数据科技发展有限公司北京分公司</h4>
+                            <span class="text-xs tracking-widest text-stone-400 font-medium">2017.05 - 2018.11</span>
+                        </div>
+                        <p class="text-xs text-stone-400 uppercase tracking-widest mb-3">UI设计师</p>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                            全面负责“紫藤”、“评论督查”等多款数据产品的用户体验全流程设计，涵盖产品策划、原型绘制、交互设计至视觉落地。<br/>
+                            建立并推行公司级UI设计规范，完成网站前端与后台系统的整体视觉风格把控，主导项目迭代升级，有效整合UI界面。
+                        </p>
+                    </div>
+
+                    <div class="relative pl-8 border-l border-stone-200">
+                        <div class="absolute -left-[5px] top-1 w-[9px] h-[9px] bg-stone-300 rounded-full"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                            <h4 class="font-bold text-lg">上海众焱网络科技有限公司</h4>
+                            <span class="text-xs tracking-widest text-stone-400 font-medium">2016.05 - 2017.03</span>
+                        </div>
+                        <p class="text-xs text-stone-400 uppercase tracking-widest mb-3">UI设计师</p>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                            独立完成公司网站及iOS移动端产品的UI视觉设计，并承担前期的交互原型设计工作，奠定产品用户体验基础。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center pt-10">
+                    <button id="toggle-experience-btn" type="button" aria-expanded="false" aria-controls="more-experience" onclick="toggleMoreExperience()" class="text-xs tracking-widest text-stone-400 border-b border-stone-300 pb-1 hover:text-stone-800 transition-colors uppercase font-medium">展开更多</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry Awards Marquee -->
+        <div class="py-16 bg-stone-100 border-y border-stone-200 overflow-hidden">
+            <div id="awards-ticker" class="flex whitespace-nowrap space-x-20">
+                <span class="text-2xl md:text-3xl font-light text-stone-400 tracking-wider">虎啸奖 TIGER ROAR AWARDS</span>
+                <span class="text-2xl md:text-3xl font-light text-stone-400 tracking-wider">DMA 中国数字媒体大奖</span>
+                <span class="text-2xl md:text-3xl font-light text-stone-400 tracking-wider">金鼠标奖 GOLDEN MOUSE AWARDS</span>
+                <span class="text-2xl md:text-3xl font-light text-stone-400 tracking-wider">金梧奖 GOLDEN WUTONG AWARDS</span>
+                <span class="text-2xl md:text-3xl font-light text-stone-400 tracking-wider">虎啸奖 TIGER ROAR AWARDS</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="pt-24 pb-16 px-6 md:px-12 bg-[#f9f8f4] border-t border-stone-200/60 mt-auto">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-stretch mb-20 gap-10 md:gap-16">
+                <!-- Slogan & Subtext Left Column -->
+                <div class="flex flex-col justify-between py-1 max-w-2xl space-y-12">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-stone-900 leading-[1.22] tracking-tight">
+                            把模糊的问题，<br/>
+                            设计成清晰的体验。
+                        </h2>
+                    </div>
+                    <p class="text-stone-600 text-sm md:text-base font-normal tracking-normal leading-relaxed">
+                        如果你正在做一件复杂但值得的事，我们可以聊聊。
+                    </p>
+                </div>
+
+                <!-- Contact & Location Right Column (Right Aligned) -->
+                <div class="flex flex-col justify-between py-1 text-left md:text-right min-w-[200px] space-y-10 md:space-y-0">
+                    <div>
+                        <div class="text-xs md:text-sm text-stone-500 mb-2 font-normal">联系方式</div>
+                        <div class="flex items-center justify-start md:justify-end space-x-6 text-base md:text-lg font-bold text-stone-900">
+                            <button onclick="copyText('964645808@qq.com', '已复制邮箱地址：964645808@qq.com')" class="hover:text-[#8c7e6d] transition-colors cursor-pointer" title="点击复制邮箱">
+                                邮箱
+                            </button>
+                            
+                            <!-- WeChat Hover Popover Container -->
+                            <div class="relative group inline-block">
+                                <button onclick="copyWeChat('19521312031')" class="hover:text-[#8c7e6d] transition-colors cursor-pointer" title="微信: 19521312031">
+                                    微信
+                                </button>
+                                
+                                <!-- QR Code Floating Card -->
+                                <div class="absolute bottom-full right-0 md:left-1/2 md:-translate-x-1/2 mb-3 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-300 z-50 flex flex-col items-center">
+                                    <div class="bg-white p-3 rounded-[16px] shadow-2xl border border-stone-200/80 w-44 text-center">
+                                        <img src="assets/wechat-qr.png" alt="微信二维码" class="w-full h-auto rounded-[16px] mb-2 border border-stone-100" />
+                                        <span class="text-[11px] text-stone-500 font-medium block">扫一扫添加微信</span>
+                                    </div>
+                                    <!-- Arrow indicator -->
+                                    <div class="w-3 h-3 bg-white rotate-45 -mt-1.5 border-r border-b border-stone-200/80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="text-xs md:text-sm text-stone-500 mb-2 font-normal">工作地点</div>
+                        <div class="text-base md:text-lg font-bold text-stone-900">
+                            中国，上海
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Divider & Copyright -->
+            <div class="border-t border-stone-300/70 pt-8 flex justify-between items-center text-sm text-stone-800 font-normal">
+                <div>© 2026 Liz Hu</div>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-[#8c7e6d] transition-colors flex items-center gap-1.5 cursor-pointer font-normal">
+                    返回顶部 <span class="text-base">↑</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 通用复制文本函数
+        function copyText(text, successMessage) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text);
+            } else {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            }
+            showToast(successMessage || ('已复制：' + text));
+        }
+
+        // 复制微信与气泡提示
+        function copyWeChat(text) {
+            copyText(text, '已复制微信号：' + text);
+        }
+
+        function showToast(message) {
+            let toast = document.getElementById('custom-toast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'custom-toast';
+                toast.className = 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-stone-900 text-white text-xs px-5 py-2.5 rounded-full shadow-lg z-50 transition-all duration-300 opacity-0 pointer-events-none';
+                document.body.appendChild(toast);
+            }
+            toast.textContent = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+
+        // 切换履历展开/收起
+        function toggleMoreExperience() {
+            const moreExp = document.getElementById('more-experience');
+            const btn = document.getElementById('toggle-experience-btn');
+            const expanded = moreExp.classList.contains('hidden');
+            if (expanded) {
+                moreExp.classList.remove('hidden');
+                btn.textContent = '收起';
+            } else {
+                moreExp.classList.add('hidden');
+                btn.textContent = '展开更多';
+            }
+            btn.setAttribute('aria-expanded', String(expanded));
+            ScrollTrigger.refresh();
+        }
+
+        // 切换精选案例展开/收起
+        function toggleMoreProjects() {
+            const card = document.getElementById('more-project-5');
+            const btn = document.getElementById('toggle-projects-btn');
+            const expanded = card.classList.contains('hidden');
+            card.classList.toggle('hidden', !expanded);
+            btn.setAttribute('aria-expanded', String(expanded));
+            btn.querySelector('span').textContent = expanded ? '收起案例' : '展开更多案例';
+            btn.querySelector('[aria-hidden="true"]').textContent = expanded ? '↑' : '↓';
+            ScrollTrigger.refresh();
+        }
+
+        // 路由控制 (单页视图切换)
+        function handleRouting() {
+            const hash = window.location.hash || '#home';
+            const homeView = document.getElementById('home-view');
+
+            homeView.classList.remove('hidden');
+            if (hash && hash !== '#home') {
+                const targetEl = document.querySelector(hash);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            updateActiveNavLink();
+        }
+
+        // 高亮当前导航选项
+        function updateActiveNavLink() {
+            const hash = window.location.hash || '#home';
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === hash) {
+                    link.classList.add('text-[#8c7e6d]', 'font-semibold');
+                } else {
+                    link.classList.remove('text-[#8c7e6d]', 'font-semibold');
+                }
+            });
+        }
+
+        window.addEventListener('hashchange', handleRouting);
+
+        window.onload = () => {
+            handleRouting();
+
+            /* 主页视差文字滚动 */
+            const bgText = document.getElementById('hero-bg-text');
+            if (bgText) {
+                gsap.to("#hero-bg-text", {
+                    scrollTrigger: {
+                        trigger: "#hero",
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 1.5
+                    },
+                    xPercent: -20,
+                    opacity: 0.08
+                });
+            }
+
+            /* 仅让卡片图片产生视差位移，外层卡片保持原位以固定间距 */
+            gsap.utils.toArray('.project-card').forEach((card) => {
+                const img = card.querySelector('.parallax-img');
+                if (img) {
+                    gsap.fromTo(img,
+                        { yPercent: -5 },
+                        {
+                            yPercent: 5,
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: card,
+                                start: "top bottom",
+                                end: "bottom top",
+                                scrub: true
+                            }
+                        }
+                    );
+                }
+            });
+
+            /* 奖项无缝跑马灯效果 */
+            const ticker = document.getElementById('awards-ticker');
+            if (ticker) {
+                gsap.to("#awards-ticker", {
+                    xPercent: -40,
+                    repeat: -1,
+                    duration: 25,
+                    ease: "none"
+                });
+            }
+
+            /* 首页区块淡入与上浮视觉动画 */
+            const fadeElements = document.querySelectorAll('#hero h1, #hero h2, #hero p, #about h3, #about .group, #experience h3, #experience .relative');
+            fadeElements.forEach(el => {
+                gsap.from(el, {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 95%",
+                        toggleActions: "play none none none"
+                    },
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.8,
+                    ease: "power1.out"
+                });
+            });
+        };
+    </script>
+</body>
+</html>
