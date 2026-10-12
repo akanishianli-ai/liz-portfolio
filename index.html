@@ -89,6 +89,75 @@
         .page-transition {
             transition: opacity 0.4s ease, transform 0.4s ease;
         }
+
+        .section-title-light::after {
+            background: #fff;
+        }
+
+        body.project-modal-open {
+            overflow: hidden;
+        }
+
+        .project-modal[hidden] {
+            display: none;
+        }
+
+        .project-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(12, 10, 9, 0.88);
+            backdrop-filter: blur(8px);
+        }
+
+        .project-modal__panel {
+            width: min(100%, 1600px);
+            max-height: calc(100vh - 48px);
+            overflow: auto;
+            overscroll-behavior: contain;
+            border-radius: 16px;
+            background: #f9f8f4;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+        }
+
+        .project-modal__header {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(231, 229, 228, 0.9);
+            background: rgba(249, 248, 244, 0.94);
+            backdrop-filter: blur(12px);
+        }
+
+        .project-modal__image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 640px) {
+            .project-modal {
+                padding: 10px;
+            }
+
+            .project-modal__panel {
+                max-height: calc(100vh - 20px);
+                border-radius: 12px;
+            }
+
+            .project-modal__header {
+                padding: 12px 14px;
+            }
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -98,7 +167,7 @@
         <div class="space-x-4 md:space-x-8 text-xs md:text-sm uppercase tracking-wider font-medium flex">
             <a href="#home" class="nav-link hover:text-[#8c7e6d] transition-colors">首页</a>
             <a href="#about" class="nav-link hover:text-[#8c7e6d] transition-colors">关于我</a>
-            <a href="#projects" class="nav-link hover:text-[#8c7e6d] transition-colors">精选作品</a>
+            <a href="#projects" class="nav-link hover:text-[#8c7e6d] transition-colors">精选案例</a>
             <a href="#experience" class="nav-link hover:text-[#8c7e6d] transition-colors">工作履历</a>
         </div>
     </nav>
@@ -107,23 +176,23 @@
         
         <!-- Hero Section -->
         <section id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden px-6 pt-16">
-            <div class="parallax-bg" id="hero-bg-text">体验设计</div>
+            <div class="parallax-bg" id="hero-bg-text">UI设计</div>
             
             <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center mt-12">
                 <div class="md:col-span-1 hidden md:block">
                     <div class="vertical-text text-xs tracking-[0.5em] text-stone-400 opacity-80 uppercase font-medium">
-                        UI / UX / XR / 数字孪生
+                        UI / UX / 多端产品 / 沉浸式体验
                     </div>
                 </div>
                 
                 <div class="md:col-span-7">
-                    <h2 class="text-xs tracking-[0.3em] mb-4 text-stone-500 uppercase font-medium">10年卓越设计积淀</h2>
+                    <h2 class="text-xs tracking-[0.3em] mb-4 text-stone-500 uppercase font-medium">10年设计经验</h2>
                     <h1 class="text-5xl md:text-7xl font-light leading-tight mb-6">
-                        资深交互设计<br/>
+                        资深UI设计<br/>
                         <span class="font-bold">胡安栗</span>
                     </h1>
                     <p class="max-w-md text-stone-600 leading-relaxed font-light text-sm">
-                        深耕高端汽车XR沉浸式交互、AIGC数字孪生及多端产品体验设计。通过视觉与逻辑的纯粹结合，为一线品牌构建商业温度与体验灵魂。
+                        深耕C端多端产品与设计系统建设，覆盖 APP、小程序、Web 及 VR/XR 沉浸式体验，主导项目多次获得行业奖项。
                     </p>
                 </div>
 
@@ -165,113 +234,77 @@
                 
                 <div class="bg-stone-100/70 p-10 rounded-[16px] relative overflow-hidden border border-stone-200">
                     <div class="parallax-bg text-4xl opacity-[0.01]" style="top:20%; left:10%;">专业技能</div>
-                    <h3 class="text-xs tracking-widest text-stone-400 mb-8 uppercase font-medium">核心技术专业栈</h3>
+                    <h3 class="text-xs tracking-widest text-stone-400 mb-8 uppercase font-medium">核心设计能力</h3>
                     <div class="flex flex-wrap gap-3">
                         <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">UI/UX设计</span>
-                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">XR/VR界面交互</span>
-                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">数字孪生</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">沉浸式界面设计</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">C端多端设计</span>
                         <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">数据可视化</span>
-                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">虚幻引擎界面适配</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">跨屏交互设计</span>
                         <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">AIGC设计工具</span>
                         <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">设计系统规范</span>
                         <span class="px-4 py-2 bg-white rounded-full text-xs shadow-sm text-stone-700">全局组件库</span>
                     </div>
                     <div class="mt-12">
                         <div class="text-5xl font-bold text-stone-800 opacity-20">10年</div>
-                        <div class="text-xs text-stone-500 mt-2 tracking-widest uppercase">资深行业设计经验</div>
+                        <div class="text-xs text-stone-500 mt-2 tracking-widest uppercase">多端产品UI设计经验</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Selected Projects (Featured) -->
-        <section id="projects" class="py-20 bg-stone-900 text-white overflow-hidden">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                    <div>
-                        <h3 class="section-title text-white mb-2">精选案例 / SELECTED WORK</h3>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-10 items-start">
-                    <div class="flex flex-col gap-y-12">
-                        <!-- Project 1 -->
-                    <div class="project-card group">
-                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
-                            <img src="assets/case-benz.png" alt="Benz G63 VR" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
-                                <div class="flex space-x-2 mb-3">
-                                    <span class="award-tag border-white text-white">2023 虎啸奖 · 智能交互金奖</span>
-                                </div>
-                                <h4 class="text-xl md:text-2xl font-medium">奔驰 G63 VR 新零售智能看车体验</h4>
-                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">VR 空间交互 / 虚幻引擎</p>
-                            </div>
-                        </div>
-                    </div>
-                        <!-- Project 3 -->
-                    <div class="project-card group">
-                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
-                            <img src="assets/case-under-armour.png" alt="Under Armour Retail" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
-                                <div class="flex space-x-2 mb-3">
-                                    <span class="award-tag border-white text-white">2024 金梧奖 · 零售创新银奖</span>
-                                </div>
-                                <h4 class="text-xl md:text-2xl font-medium">安德玛中国全渠道数字消费新体验</h4>
-                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">全渠道商业生态 / 设计系统搭建</p>
-                            </div>
-                        </div>
-                    </div>
-                        <!-- Expanded project -->
-                    <div id="more-project-5" class="project-card group hidden">
-                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
-                            <img src="assets/case-porsche.png" alt="保时捷交付小程序" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
-                                <div class="flex space-x-2 mb-3">
-                                    <span class="award-tag border-white text-white">2023 DMA 移动应用银奖</span>
-                                </div>
-                                <h4 class="text-xl md:text-2xl font-medium">保时捷“开箱交付时刻”车主尊享生态</h4>
-                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">高端用户体验 / 微信小程序定制生态</p>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="flex flex-col gap-y-12 md:pt-8">
-                        <!-- Project 2 -->
-                    <div class="project-card group">
-                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
-                            <img src="assets/case-digital-twin.png" alt="Digital Twin" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
-                                <div class="flex space-x-2 mb-3">
-                                    <span class="award-tag border-white text-white">2025 虎啸奖 · 年度最佳AIGC平台</span>
-                                </div>
-                                <h4 class="text-xl md:text-2xl font-medium">虚拟资产工坊 - 铸造全息数字孪生</h4>
-                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">AIGC 视觉生成 / 3D 资产管理</p>
-                            </div>
-                        </div>
-                    </div>
-                        <!-- Project 4 -->
-                    <div class="project-card group">
-                        <div class="relative overflow-hidden aspect-video bg-stone-800 rounded-[16px]">
-                            <img src="assets/case-maybach.png" alt="Maybach XR" class="parallax-img absolute -top-[10%] left-0 w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent flex flex-col justify-end p-8">
-                                <div class="flex space-x-2 mb-3">
-                                    <span class="award-tag border-white text-white">2023 虎啸奖 · 优秀智能交互奖</span>
-                                </div>
-                                <h4 class="text-xl md:text-2xl font-medium">迈巴赫 XR 艺境沙龙数字配置器</h4>
-                                <p class="text-stone-400 text-xs mt-2 uppercase tracking-wider">XR 沉浸配置 / 中控双屏联动</p>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-10">
-                    <button id="toggle-projects-btn" type="button" aria-expanded="false" aria-controls="more-project-5" onclick="toggleMoreProjects()" class="inline-flex items-center gap-2 text-xs tracking-widest text-stone-400 border-b border-stone-600 pb-1 hover:text-white transition-colors uppercase font-medium">
-                        <span>展开更多案例</span>
-                        <span aria-hidden="true" class="transition-transform">↓</span>
-                    </button>
+        <!-- Selected Projects -->
+        <section id="projects" class="py-20 md:py-24 bg-[#1a1a1a] text-white overflow-hidden">
+            <div class="max-w-[1600px] mx-auto px-6">
+                <div class="mb-2">
+                    <h3 class="section-title section-title-light text-white mb-0">精选案例 / SELECTED WORK</h3>
                 </div>
 
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-8 gap-y-8 md:gap-y-12 pt-8 md:pt-12">
+                    <button type="button" class="project-card group relative block w-full cursor-pointer overflow-hidden rounded-[16px] bg-stone-800 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" data-project-title="虚拟资产工坊：铸造全息数字孪生" data-project-image="assets/project-details/amorepacific.jpg" aria-label="查看项目长图：虚拟资产工坊，爱茉莉太平洋">
+                        <div class="relative aspect-video overflow-hidden rounded-[16px]">
+                            <img src="assets/case-digital-twin.png" alt="虚拟资产工坊项目封面" class="parallax-img absolute -top-[10%] left-0 h-[120%] w-full object-cover opacity-65 transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent p-6 md:p-8">
+                                <span class="award-tag mb-3 w-fit border-white text-white">2025 虎啸奖 · 年度最佳 AIGC 平台</span>
+                                <h4 class="text-xl font-medium md:text-2xl">虚拟资产工坊：铸造全息数字孪生</h4>
+                                <p class="mt-2 text-xs uppercase tracking-wider text-stone-300">AIGC 视觉生成 / 3D 资产管理</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" class="project-card group relative block w-full cursor-pointer overflow-hidden rounded-[16px] bg-stone-800 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:translate-y-[33px]" data-project-title="安德玛中国全渠道数字消费新体验" data-project-image="assets/project-details/under-armour.jpg" aria-label="查看项目长图：安德玛中国全渠道数字消费新体验">
+                        <div class="relative aspect-video overflow-hidden rounded-[16px]">
+                            <img src="assets/case-under-armour.png" alt="安德玛全渠道零售项目封面" class="parallax-img absolute -top-[10%] left-0 h-[120%] w-full object-cover opacity-65 transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent p-6 md:p-8">
+                                <span class="award-tag mb-3 w-fit border-white text-white">2024 金梧奖 · 零售创新银奖</span>
+                                <h4 class="text-xl font-medium md:text-2xl">安德玛中国全渠道数字消费新体验</h4>
+                                <p class="mt-2 text-xs uppercase tracking-wider text-stone-300">全渠道商业生态 / 设计系统搭建</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" class="project-card group relative block w-full cursor-pointer overflow-hidden rounded-[16px] bg-stone-800 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" data-project-title="奔驰数字化零售体验演进" data-project-image="assets/project-details/mercedes-retail.jpg" aria-label="查看项目长图：奔驰数字化零售体验演进">
+                        <div class="relative aspect-video overflow-hidden rounded-[16px]">
+                            <img src="assets/case-benz.png" alt="奔驰数字化零售体验项目封面" class="parallax-img absolute -top-[10%] left-0 h-[120%] w-full object-cover opacity-65 transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent p-6 md:p-8">
+                                <span class="award-tag mb-3 w-fit border-white text-white">2023 虎啸奖 · 智能交互金奖</span>
+                                <h4 class="text-xl font-medium md:text-2xl">奔驰数字化零售体验演进</h4>
+                                <p class="mt-2 text-xs uppercase tracking-wider text-stone-300">沉浸式体验 / 跨屏交互设计</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" class="project-card group relative block w-full cursor-pointer overflow-hidden rounded-[16px] bg-stone-800 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:translate-y-[33px]" data-project-title="保时捷开箱交付时刻" data-project-image="assets/project-details/porsche-delivery.jpg" aria-label="查看项目长图：保时捷开箱交付时刻">
+                        <div class="relative aspect-video overflow-hidden rounded-[16px]">
+                            <img src="assets/case-porsche.png" alt="保时捷交车小程序项目封面" class="parallax-img absolute -top-[10%] left-0 h-[120%] w-full object-cover opacity-65 transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-stone-950/90 via-stone-900/30 to-transparent p-6 md:p-8">
+                                <span class="award-tag mb-3 w-fit border-white text-white">2023 DMA · 移动应用和网站最佳应用银奖</span>
+                                <h4 class="text-xl font-medium md:text-2xl">保时捷开箱交付时刻</h4>
+                                <p class="mt-2 text-xs uppercase tracking-wider text-stone-300">车主尊享生态 / 微信小程序</p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -355,6 +388,16 @@
             </div>
         </div>
 
+    </div>
+
+    <div id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" aria-hidden="true" hidden>
+        <div class="project-modal__panel">
+            <div class="project-modal__header">
+                <h2 id="project-modal-title" class="text-sm font-medium tracking-wide text-stone-800 md:text-base"></h2>
+                <button id="project-modal-close" type="button" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-2xl leading-none text-stone-600 transition-colors hover:bg-stone-200 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-stone-800" aria-label="关闭项目长图">×</button>
+            </div>
+            <img id="project-modal-image" class="project-modal__image" src="" alt="">
+        </div>
     </div>
 
     <!-- Footer -->
@@ -444,6 +487,44 @@
             copyText(text, '已复制微信号：' + text);
         }
 
+        // 点击精选案例卡片查看对应长图
+        const projectModal = document.getElementById('project-modal');
+        const projectModalImage = document.getElementById('project-modal-image');
+        const projectModalTitle = document.getElementById('project-modal-title');
+        const projectModalClose = document.getElementById('project-modal-close');
+        let lastFocusedProject = null;
+
+        function openProjectModal(card) {
+            lastFocusedProject = card;
+            projectModalTitle.textContent = card.dataset.projectTitle;
+            projectModalImage.src = card.dataset.projectImage;
+            projectModalImage.alt = card.dataset.projectTitle + '项目长图';
+            projectModal.hidden = false;
+            projectModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('project-modal-open');
+            projectModalClose.focus();
+        }
+
+        function closeProjectModal() {
+            if (projectModal.hidden) return;
+            projectModal.hidden = true;
+            projectModal.setAttribute('aria-hidden', 'true');
+            projectModalImage.removeAttribute('src');
+            document.body.classList.remove('project-modal-open');
+            if (lastFocusedProject) lastFocusedProject.focus();
+        }
+
+        document.querySelectorAll('[data-project-image]').forEach(card => {
+            card.addEventListener('click', () => openProjectModal(card));
+        });
+        projectModalClose.addEventListener('click', closeProjectModal);
+        projectModal.addEventListener('click', event => {
+            if (event.target === projectModal) closeProjectModal();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeProjectModal();
+        });
+
         function showToast(message) {
             let toast = document.getElementById('custom-toast');
             if (!toast) {
@@ -474,18 +555,6 @@
                 btn.textContent = '展开更多';
             }
             btn.setAttribute('aria-expanded', String(expanded));
-            ScrollTrigger.refresh();
-        }
-
-        // 切换精选案例展开/收起
-        function toggleMoreProjects() {
-            const card = document.getElementById('more-project-5');
-            const btn = document.getElementById('toggle-projects-btn');
-            const expanded = card.classList.contains('hidden');
-            card.classList.toggle('hidden', !expanded);
-            btn.setAttribute('aria-expanded', String(expanded));
-            btn.querySelector('span').textContent = expanded ? '收起案例' : '展开更多案例';
-            btn.querySelector('[aria-hidden="true"]').textContent = expanded ? '↑' : '↓';
             ScrollTrigger.refresh();
         }
 
